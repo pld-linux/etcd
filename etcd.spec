@@ -2,12 +2,12 @@
 %define debug_package %{nil}
 Summary:	A highly-available key value store for shared configuration
 Name:		etcd
-Version:	0.1.2
+Version:	0.3.0
 Release:	1
 License:	Apache v2.0
 Group:		Daemons
 Source0:	https://github.com/coreos/etcd/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	4d0fb3fd2fc3aa051b47ff5d8fb151cf
+# Source0-md5:	123d5b2143ad4b21cb89af3e56fd0852
 URL:		https://github.com/coreos/etcd/
 BuildRequires:	golang
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
