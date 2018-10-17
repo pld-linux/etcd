@@ -1,11 +1,11 @@
 --- etcd-2.0.11/build~	2015-05-15 23:54:32.000000000 +0300
 +++ etcd-2.0.11/build	2015-05-30 09:37:00.739376624 +0300
 @@ -11,7 +11,7 @@
+ ORG_PATH="github.com/coreos"
+ REPO_PATH="${ORG_PATH}/etcd"
  
- eval $(go env)
- 
--GIT_SHA=`git rev-parse --short HEAD`
-+GIT_SHA=${GIT_SHA:-`git rev-parse --short HEAD`}
- 
- # Static compilation is useful when etcd is run in a container
- CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags "-s -X ${REPO_PATH}/version.GitSHA ${GIT_SHA}" -o bin/etcd ${REPO_PATH}
+-GIT_SHA=$(git rev-parse --short HEAD || echo "GitNotFound")
++GIT_SHA=${GIT_SHA:-`git rev-parse --short HEAD || echo "GitNotFound"`}
+ if [ ! -z "$FAILPOINTS" ]; then
+ 	GIT_SHA="$GIT_SHA"-FAILPOINTS
+ fi
