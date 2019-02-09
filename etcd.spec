@@ -1,13 +1,13 @@
 # git rev-parse --short v3.3.10
-%define		githash	27fc7e2
+%define		githash	d57e8b8
 Summary:	A highly-available key value store for shared configuration
 Name:		etcd
-Version:	3.3.10
+Version:	3.3.12
 Release:	1
 License:	Apache v2.0
 Group:		Daemons
 Source0:	https://github.com/coreos/etcd/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	cae7a6e0a7e23548fc098e24282a6c8e
+# Source0-md5:	23bc317f1db7730bcd408575616ea651
 Patch0:		nogit.patch
 URL:		https://github.com/coreos/etcd/
 BuildRequires:	golang >= 1.2.1-3
